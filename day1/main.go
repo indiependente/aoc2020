@@ -18,7 +18,7 @@ func main() {
 }
 
 func run() error {
-	f, err := os.Open("./part1/input")
+	f, err := os.Open("./input")
 	if err != nil {
 		return err
 	}
