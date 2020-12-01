@@ -1,11 +1,5 @@
 package part1
 
-import (
-	"bufio"
-	"fmt"
-	"io"
-)
-
 /*
 --- Day 1: Report Repair ---
 After saving Christmas five years in a row, you've decided to take a vacation at a nice resort on a tropical island. Surely, Christmas will go on without you.
@@ -32,28 +26,12 @@ In this list, the two entries that sum to 2020 are 1721 and 299. Multiplying the
 
 */
 
-func Sum2020(r io.Reader) (int, error) {
-	input := make([]int, 0, 200)
-	br := bufio.NewReader(r)
-	i := 0
-	for {
-		line, err := br.ReadString('\n')
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			return 0, err
-		}
-		var n int
-		fmt.Sscanf(line, "%d", &n)
-		input = append(input, n)
-		i++
-	}
+func Sum2020(input []int) (int, error) {
 	var (
 		a, b int
 	)
 	for i := 0; i < len(input)/2; i++ {
-		for j := i + 1; j < len(input)-2; j++ {
+		for j := i + 1; j < len(input); j++ {
 			if input[i]+input[j] == 2020 {
 				a = input[i]
 				b = input[j]
