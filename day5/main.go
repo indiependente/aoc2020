@@ -19,6 +19,7 @@ func main() {
 		log.Fatal(err)
 	}
 }
+
 func run() error {
 	f, err := os.Open("./input")
 	if err != nil {
